@@ -1,0 +1,17 @@
+#body{
+    background-color: lightseagreen;
+}
+
+.container{
+    font-style: italic;
+    margin: 0px;
+    text-align: center;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.ul{
+    text-align: justify;
+}
