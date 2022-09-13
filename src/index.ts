@@ -21,7 +21,7 @@ function listaTarefas(){
         toDoElement.setAttribute("style", "color: red");
         
         let linkElement = document.createElement("a");
-        linkElement.setAttribute("href", "");
+        linkElement.setAttribute("href", "#");
         let posicao_urgentes = tarefasUrgentes.indexOf(valor);
         linkElement.setAttribute("onclick", `deletarTarefaUrgente(${posicao_urgentes})`);
         linkElement.setAttribute("style", "margin-left:15px")
