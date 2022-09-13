@@ -13,9 +13,9 @@ function listaTarefas() {
         let tarefaText = document.createTextNode(valor);
         toDoElement.setAttribute("style", "color: red");
         let linkElement = document.createElement("a");
-        linkElement.setAttribute("href", "#");
-        let posicao = tarefas.indexOf(valor);
-        linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`);
+        linkElement.setAttribute("href", "");
+        let posicao_urgentes = tarefasUrgentes.indexOf(valor);
+        linkElement.setAttribute("onclick", `deletarTarefaUrgente(${posicao_urgentes})`);
         linkElement.setAttribute("style", "margin-left:15px");
         let linkText = document.createTextNode("Excluir");
         linkElement.appendChild(linkText);
@@ -58,10 +58,15 @@ function adicionaTarefa() {
 buttonElement.onclick = adicionaTarefa;
 function deletarTarefa(posicao) {
     tarefas.splice(posicao, 1);
+    listaTarefas();
+    salvarDados();
+}
+function deletarTarefaUrgente(posicao) {
     tarefasUrgentes.splice(posicao, 1);
     listaTarefas();
     salvarDados();
 }
 function salvarDados() {
     localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas));
+    localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefasUrgentes));
 }

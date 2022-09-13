@@ -1,17 +1,21 @@
 #body{
-    background-color: lightseagreen;
+    text-align: center;
+    background-color: aliceblue;
 }
 
 .container{
-    font-style: italic;
+    font-style: Times;
     margin: 0px;
     text-align: center;
+    color: rgb(19, 54, 54);
 }
 
 .titulo{
     text-align: center;
+    color: rgb(19, 54, 54);
 }
 
 .ul{
     text-align: justify;
+    color:rgb(19, 54, 54)
 }
