@@ -9,7 +9,9 @@ let listaTarefa: (string | null) = localStorage.getItem("@listagem_tarefas");
 
 let tarefas: string[] = listaTarefa !== null && JSON.parse(listaTarefa) || [];
 
-let tarefasUrgentes: string[] = listaTarefa !== null && JSON.parse(listaTarefa) || [];
+let listaTarefaUrgentes: (string | null) = localStorage.getItem("@listagem_tarefas_urgente");
+
+let tarefasUrgentes: string[] = listaTarefaUrgentes !== null && JSON.parse(listaTarefaUrgentes) || [];
 
 function listaTarefas(){ 
     listElement.innerHTML = "";
@@ -96,5 +98,5 @@ function deletarTarefaUrgente(posicao: number){
 
 function salvarDados(){
     localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas));
-    localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefasUrgentes));
+    localStorage.setItem("@listagem_tarefas_urgente", JSON.stringify(tarefasUrgentes));
 }

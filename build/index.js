@@ -5,7 +5,8 @@ let urgencia = document.getElementById('check');
 let buttonElement = document.querySelector("#app button");
 let listaTarefa = localStorage.getItem("@listagem_tarefas");
 let tarefas = listaTarefa !== null && JSON.parse(listaTarefa) || [];
-let tarefasUrgentes = listaTarefa !== null && JSON.parse(listaTarefa) || [];
+let listaTarefaUrgentes = localStorage.getItem("@listagem_tarefas_urgente");
+let tarefasUrgentes = listaTarefaUrgentes !== null && JSON.parse(listaTarefaUrgentes) || [];
 function listaTarefas() {
     listElement.innerHTML = "";
     tarefasUrgentes.map(valor => {
@@ -68,5 +69,5 @@ function deletarTarefaUrgente(posicao) {
 }
 function salvarDados() {
     localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas));
-    localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefasUrgentes));
+    localStorage.setItem("@listagem_tarefas_urgente", JSON.stringify(tarefasUrgentes));
 }
